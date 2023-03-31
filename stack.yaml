@@ -1,51 +1,57 @@
+resolver: lts-20.16
+
 flags:
   pandoc:
     embed_data_files: true
   QuickCheck:
     old-random: false
 packages:
-- '.'
+  - "."
 extra-deps:
-- skylighting-core-0.13
-- skylighting-0.13
-- skylighting-format-ansi-0.1
-- skylighting-format-latex-0.1
-- skylighting-format-blaze-html-0.1
-- emojis-0.1.2
-- gridtables-0.0.3.0
-- lpeg-1.0.3
-- hslua-2.2.1
-- hslua-aeson-2.2.1
-- hslua-classes-2.2.0
-- hslua-core-2.2.1
-- hslua-marshalling-2.2.1
-- hslua-module-doclayout-1.0.4
-- hslua-module-path-1.0.3
-- hslua-module-system-1.0.2
-- hslua-module-text-1.0.2
-- hslua-module-version-1.0.2
-- hslua-objectorientation-2.2.1
-- hslua-packaging-2.2.1
-- lua-2.2.1
-- lua-arbitrary-1.0.1
-- tasty-hslua-1.0.2
-- tasty-lua-1.0.2
-- pandoc-lua-marshal-0.1.7
-- aeson-pretty-0.8.9
-- unicode-transforms-0.4.0.1
-- unicode-data-0.3.0
-- commonmark-pandoc-0.2.1.2
-- ipynb-0.2
-- pandoc-types-1.22.2.1
-- commonmark-0.2.2
-- commonmark-extensions-0.2.3.2
-- doclayout-0.4
-- doctemplates-0.10.0.2
-- citeproc-0.8.0.1
-- texmath-0.12.5.2
+  - skylighting-core-0.13
+  - skylighting-0.13
+  - skylighting-format-ansi-0.1
+  - skylighting-format-latex-0.1
+  - skylighting-format-blaze-html-0.1
+  - emojis-0.1.2
+  - gridtables-0.0.3.0
+  - lpeg-1.0.3
+  - aeson-pretty-0.8.9
+  - unicode-transforms-0.4.0.1
+  - unicode-data-0.3.0
+  - commonmark-pandoc-0.2.1.2
+  - ipynb-0.2
+  - pandoc-types-1.22.2.1
+  - commonmark-0.2.2
+  - commonmark-extensions-0.2.3.2
+  - doclayout-0.4
+  - doctemplates-0.10.0.2
+  - citeproc-0.8.0.1
+  - texmath-0.12.5.2
+
+  - git: https://github.com/baulig/hslua.git
+    commit: 65e37da6081773bdb324dafc1a2285cf1b497382
+    subdirs:
+      - hslua
+      - hslua-aeson
+      - hslua-classes
+      - hslua-core
+      - hslua-marshalling
+      - hslua-module-path
+      - hslua-module-system
+      - hslua-module-text
+      - hslua-module-version
+      - hslua-objectorientation
+      - hslua-packaging
+      - lua
+      - lua-arbitrary
+      - tasty-hslua
+      - tasty-lua
+
+  - hslua-module-doclayout-1.0.4
+  - pandoc-lua-marshal-0.1.7
 
 ghc-options:
-   "$locals": -fhide-source-paths -Wno-missing-home-modules
-resolver: lts-18.10
+  "$locals": -fhide-source-paths -Wno-missing-home-modules
 nix:
   packages: [zlib]
